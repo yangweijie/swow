@@ -25,18 +25,17 @@
     },
     "require": {
         "php": ">=8.0",
-        "composer/semver": "^3.3",
+        "composer/semver": "^3.4",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
         "psr/http-message": "^1.1|^2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.17",
-        "phan/phan": "^5.4.1",
-        "phpstan/phpstan": "^1.9.2",
-        "phpunit/phpunit": "^9.5.26",
-        "rector/rector": "^0.12.23",
-        "vimeo/psalm": "^4.30.0"
+        "friendsofphp/php-cs-fixer": "^3",
+        "phan/phan": "^5.4",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^11",
+        "rector/rector": "^1"
     },
     "replace": {
         "swow/swow-library": "*",
@@ -81,7 +80,6 @@
         "rector": [ "@php vendor/bin/rector process --config=tools/rector.php" ],
         "phan": [ "@swow-php vendor/bin/phan" ],
         "phpstan": [ "@php vendor/bin/phpstan analyse --memory-limit 4G -c phpstan.neon" ],
-        "psalm": [ "@php vendor/bin/psalm" ],
         "sync-dependencies": [ "@php -n tools/sync-dependencies.php" ],
         "build-extension": [ "@php ext/bin/swow-builder" ],
         "build-debug-extension": [ "@php ext/bin/swow-builder --debug" ],
