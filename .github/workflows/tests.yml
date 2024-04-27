@@ -161,7 +161,7 @@ jobs:
       - name: Setup extension dependencies
         run: |
           brew install pkg-config
-          brew install openssl@1.1
+          brew install openssl@3
           brew install curl
           brew install lcov
           brew install libpq postgresql

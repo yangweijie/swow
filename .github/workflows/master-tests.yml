@@ -97,7 +97,7 @@ jobs:
       - name: Setup extension dependencies
         run: |
           brew install pkg-config
-          brew install openssl
+          brew install openssl@3
           brew install curl
           brew install libpq postgresql
           initdb --locale=C -E UTF-8 -U postgres "$HOME/pgsqldata"
