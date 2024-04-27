@@ -130,17 +130,15 @@ jobs:
               "${{github.workspace}}/ext/include/*" \
               "${{github.workspace}}/ext/src/*" \
             --output-file coverage.info &&
-          lcov --list coverage.info &&
-          curl -s https://codecov.io/bash -o codecov.sh &&
-          chmod +x codecov.sh &&
-          ./codecov.sh -f coverage.info
+          lcov --list coverage.info
 
-      - name: Coverage phpunit tests
-        shell: bash
-        run: |
-          curl -s https://codecov.io/bash -o codecov.sh &&
-          chmod +x codecov.sh &&
-          ./codecov.sh -f ./lib/swow-library/build/coverage.xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          files: coverage.info,./lib/swow-library/build/coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
 
   macos-tests:
     name: PHP ${{ matrix.php-version }} ${{ matrix.ts }} Test on macos-latest
@@ -241,17 +239,15 @@ jobs:
               "${{github.workspace}}/ext/include/*" \
               "${{github.workspace}}/ext/src/*" \
             --output-file coverage.info &&
-          lcov --list coverage.info &&
-          curl -s https://codecov.io/bash -o codecov.sh &&
-          chmod +x codecov.sh &&
-          ./codecov.sh -f coverage.info
+          lcov --list coverage.info
 
-      - name: Coverage phpunit tests
-        shell: bash
-        run: |
-          curl -s https://codecov.io/bash -o codecov.sh &&
-          chmod +x codecov.sh &&
-          ./codecov.sh -f ./lib/swow-library/build/coverage.xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          files: coverage.info,./lib/swow-library/build/coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
 
   windows-tests:
     name: PHP ${{ matrix.php-version }} ${{ matrix.ts }} Test on windows-2019
