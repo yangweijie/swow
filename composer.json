@@ -109,7 +109,6 @@
             "@update-mime-types",
             "@gen-stub",
             "@update-arginfo",
-            "@php tools/blank-fixer.php",
             "@update-version"
         ],
         "gen-changelog": [ "@swow-php tools/gen-changelog.php" ]

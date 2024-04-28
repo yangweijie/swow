@@ -18,7 +18,7 @@ declare(strict_types=1);
     $filename = $argv[0] ?? '';
     if (isset($options['h']) || isset($options['help']) || empty($filename)) {
         $basename = basename(__FILE__);
-        exit("Usage: php {$basename} <file>");
+        exit("Usage: php {$basename} <file>\n");
     }
     $fp = @fopen($filename, 'rb');
     if ($fp === false) {

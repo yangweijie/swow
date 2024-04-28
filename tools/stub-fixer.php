@@ -50,7 +50,7 @@ $swowModifier = function (
 PHP;
         $content = preg_replace('/const (AF_\w+) = (\d+);/', $replacement, $content);
     }
-    $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
+    $parser = (new ParserFactory())->createForNewestSupportedVersion();
     $ast = $parser->parse($content);
     $traverser = new NodeTraverser();
     $traverser->addVisitor(new class($constantDefinitions) extends SimpleNodeTraverserAbstract {
