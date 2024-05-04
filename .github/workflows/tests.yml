@@ -77,7 +77,9 @@ jobs:
           #phpts: ${{ matrix.ts }}
 
       - name: Setup composer dependencies
-        run: composer update -o --ignore-platform-reqs
+        run: |
+          php ./.github/workflows/phpunit-adapter.php ${{ matrix.php-version }}
+          composer update -o --ignore-platform-reqs
 
       - name: Build Swow extension
         run: |
@@ -179,13 +181,15 @@ jobs:
           #phpts: ${{ matrix.ts }}
 
       - name: Setup composer dependencies
-        run: composer update -o --ignore-platform-reqs
+        run: |
+          php ./.github/workflows/phpunit-adapter.php ${{ matrix.php-version }}
+          composer update -o --ignore-platform-reqs
 
       - name: Detect dependencies path from php-config
         run: |
-          echo "OPENSSL_ROOT_DIR=$(php .github/workflows/detect-deps.php openssl)" >> $GITHUB_ENV
-          echo "CURL_ROOT_DIR=$(php .github/workflows/detect-deps.php curl)" >> $GITHUB_ENV
-          echo "PGSQL_ROOT_DIR=$(php .github/workflows/detect-deps.php libpq)" >> $GITHUB_ENV
+          echo "OPENSSL_ROOT_DIR=$(php ./.github/workflows/detect-deps.php openssl)" >> $GITHUB_ENV
+          echo "CURL_ROOT_DIR=$(php ./.github/workflows/detect-deps.php curl)" >> $GITHUB_ENV
+          echo "PGSQL_ROOT_DIR=$(php ./.github/workflows/detect-deps.php libpq)" >> $GITHUB_ENV
 
       - name: Build Swow extension
         env:
@@ -281,7 +285,9 @@ jobs:
           phpts: ${{ matrix.ts }}
 
       - name: Setup composer dependencies
-        run: composer update -o --ignore-platform-reqs
+        run: |
+          C:\tools\php\php.exe .\.github\workflows\phpunit-adapter.php ${{ matrix.php-version }}
+          composer update -o --ignore-platform-reqs
 
       - name: Build Swow extension
         uses: ./.github/workflows/winext
