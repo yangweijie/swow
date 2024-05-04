@@ -67,7 +67,10 @@
             "Swow\\PhpCsFixer\\": "lib/swow-php-cs-fixer-config/src/",
             "Swow\\StubUtils\\": "lib/php-stub-generator/src/",
             "Swow\\Tests\\": "lib/swow-library/tests/"
-        }
+        },
+        "files": [
+            "lib/swow-polyfill/php/8.4/UploadedFileFactoryInterface.php"
+        ]
     },
     "config": {
         "process-timeout": 0,
