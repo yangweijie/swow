@@ -34,7 +34,7 @@
         "friendsofphp/php-cs-fixer": "^3",
         "phan/phan": "^5.4",
         "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^10|^11",
+        "phpunit/phpunit": "^10",
         "rector/rector": "^1"
     },
     "replace": {
@@ -94,7 +94,7 @@
         "install-clean-extension": [ "@install-extension --clean" ],
         "install-clean-debug-extension": [ "@install-debug-extension --clean" ],
         "test-extension": [ "@php tools/test-extension.php" ],
-        "test-library": [ "@swow-php vendor/bin/phpunit --configuration lib/swow-library lib/swow-library" ],
+        "test-library": [ "@swow-php vendor/bin/phpunit --configuration lib/swow-library --no-coverage lib/swow-library" ],
         "test-library-with-pcov": [ "@swow-php -dextension=pcov -dpcov.enabled=1 vendor/bin/phpunit --configuration lib/swow-library lib/swow-library" ],
         "test": [ "@test-extension", "@test-library" ],
         "gen-stub": [
