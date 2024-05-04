@@ -123,6 +123,11 @@ jobs:
           echo "PGSQL_ROOT_DIR=$(php .github/workflows/detect-deps.php libpq)" >> $GITHUB_ENV
 
       - name: Build Swow extension
+        env:
+          CFLAGS: -I${{ env.OPENSSL_ROOT_DIR }}/include ${{ env.CFLAGS }}
+          CPPFLAGS: -I${{ env.OPENSSL_ROOT_DIR }}/include ${{ env.CPPFLAGS }}
+          LDFLAGS: -L${{ env.OPENSSL_ROOT_DIR }}/lib ${{ env.LDFLAGS }}
+          PKG_CONFIG_PATH: ${{ env.OPENSSL_ROOT_DIR }}/lib/pkgconfig:${{ env.PKG_CONFIG_PATH }}
         run: |
           cd ext
           printf "\033[1mRun phpize\033[0m\n"
