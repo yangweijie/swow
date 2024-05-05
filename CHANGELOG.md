@@ -9,7 +9,7 @@
 ## 🐣 What's New
 
 + Brand new cURL full support!!! (9a44716) (@twose)
-* Debugger support EOF Stream now! (2710c0e) (@twose)
++ Debugger support EOF Stream now! (2710c0e) (@twose)
 + Support send HTTP chunked response (b185524) (@twose)
 + Add Context and CoroutineContext (a16429d) (@twose)
 + Support PHP 8.3 and PHP 8.4-dev (@twose)
