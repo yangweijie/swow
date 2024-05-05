@@ -183,7 +183,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: "${{ steps.getref.outputs.ref }}"
+          # see https://github.com/actions/upload-artifact/blob/main/docs/MIGRATION.md#multiple-uploads-to-the-same-named-artifact
+          name: "${{ env.dllname }}-${{ steps.getref.outputs.ref }}"
           path: |
             ${{ env.dllname }}.dll
             ${{ env.dllname }}.pdb
