@@ -198,11 +198,22 @@ jobs:
           Remove-Item ${{ env.tools_path }}\php\ext\php_swow.dll
           Remove-Item ${{ env.tools_path }}\php\php.ini
 
+  mergedlls:
+    name: Merge DLLs
+    runs-on: windows-2019
+    needs: builddlls
+    steps:
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4
+        with:
+          name: all-dlls
+          pattern: php_swow-*
+
   uploaddlls:
     name: Upload DLLs
     if: ${{ github.event_name == 'push' }}
     needs:
-      - builddlls
+      - mergedlls
     runs-on: windows-2019
     steps:
       - name: Checkout
@@ -218,7 +229,7 @@ jobs:
       - name: Fetch artifact
         uses: actions/download-artifact@v4
         with:
-          name: ${{ needs.builddlls.outputs.ref }}
+          name: all-dlls
           path: .
       - name: Upload all dlls
         shell: powershell
