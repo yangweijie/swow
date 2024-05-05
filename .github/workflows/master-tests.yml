@@ -1,8 +1,8 @@
 name: tests for latest PHP
 
 on:
-  push:
-  pull_request:
+#  push:
+#  pull_request:
   workflow_dispatch:
   schedule:
     # upstream shivammathur/php-builder* run at 23:30+0000 per day
