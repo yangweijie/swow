@@ -1,3 +1,54 @@
+# v1.5.0
+
+> release-date: 2024-05-05
+
+> 优秀的项目获取 star，伟大的项目赢得人心。
+>
+> Excellent projects earn stars, great projects win hearts and minds.
+
+## 🐣 What's New
+
++ Brand new cURL full support!!! (9a44716) (@twose)
+* Debugger support EOF Stream now! (2710c0e) (@twose)
++ Support send HTTP chunked response (b185524) (@twose)
++ Add Context and CoroutineContext (a16429d) (@twose)
++ Support PHP 8.3 and PHP 8.4-dev (@twose)
+
+## ✨ What's Enhanced
+
++ Add EventDriver example for HTTP Server (8521677) (@twose)
++ Show server url in mixed server example (0520690) (@twose)
++ Introduce polyfill file to fix PHP-8.4-dev deprecations (bf47c99) (@twose)
+
+## 🐛 What's Fixed
+
+* Fix WebSocket parsing bug and add a test for it (bd9b93d) (@twose)
+* Fix missing socket crypto options (99c502b) (@twose)
+* Fix #235 (SSLv3 compilation error) (9e2c0fb) (@twose)
+* Fix builder error when php-config is not configured (93fd794) (@twose)
+* Fix example code (41da6e8) (@twose)
++ Use maxHeaderLength for Buffer size and Fix construction order (9ac0e70) (@twose)
+* Fix errors in tools (6243bb3) (@twose)
+
+## 👻 What's Removed
+
+- We are no longer rely on cURL extension (e462ce2) (@twose)
+- Remove unused clean_module_class_callback (a53184d) (@twose)
+- Remove unused maxBufferSize things (d38ddce) (@twose)
+
+## 📦 Internal
+
++ Some SSL fixes in libcat (@dixyes)
++ Update swow_fs from php (b5c9654) (@dixyes)
++ Update swow_fs rev anchors (49a91cc) (@dixyes)
++ Update artifact actions (de65d57) (@dixyes)
++ Support PHPUnit 11 (@twose)
++ Support hook constants and cleanup modules (34ad07c) (@twose)
++ Make blank-fixer smarter (177cbd0) (@twose)
++ Fix -ssl not found error on macOS CI (57a0baa) (ccd28c2) (@twose)
+
+----
+
 # v1.4.1
 
 > release-date: 2023-12-10
