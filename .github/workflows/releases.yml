@@ -35,7 +35,7 @@ jobs:
       dllname: "php_swow-php${{ matrix.php-version }}-${{ matrix.arch }}-${{ (matrix.ts == '0') && 'n' || '' }}ts-VS16"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ (github.event.inputs && github.event.inputs.ref) || github.ref }}
 
@@ -95,7 +95,7 @@ jobs:
           exit $ret
 
       - name: Cache build environments
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # this should be ok, but there's a bug, excluding not work properly
           # see https://github.com/actions/cache/issues/494
@@ -221,7 +221,7 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Create Release
         id: create_release
         run: |
