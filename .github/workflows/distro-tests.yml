@@ -13,9 +13,10 @@ jobs:
       matrix:
         php-version: [ '8.1', '8.0' ]
         distro:
-          - name: CentOS 7
-            image: centos:7
-            pkg: yum
+          # CentOS 7 died
+          # - name: CentOS 7
+          #   image: centos:7
+          #   pkg: yum
           # CentOS 8 died
           #- name: CentOS 8
           #  image: centos:8
@@ -84,7 +85,7 @@ jobs:
         if: steps.cacheprepare.outputs.phpfn
         uses: actions/cache@v3
         with:
-          key: phpcode-v2-${{steps.cacheprepare.outputs.phpfn}}
+          key: phpcode-v3-${{steps.cacheprepare.outputs.phpfn}}
           path: |
             ${{steps.cacheprepare.outputs.phpfn}}
       - name: Prepare PHP codes
@@ -102,6 +103,8 @@ jobs:
           else
             git clone --single-branch --branch PHP-${{ matrix.php-version }} --depth 1 https://github.com/php/php-src php-src
           fi
+          cd php-src
+          curl https://github.com/php/php-src/commit/a9f172466d2a7ddda192d116b4a5a2b1577a45cc.patch | patch -p1 || :
       - name: Build things
         run: |
           docker run --rm --name testcontainer \
