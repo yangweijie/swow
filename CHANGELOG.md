@@ -1,10 +1,48 @@
+# v1.5.1
+
+> release-date: 2024-05-13
+
+> 「没有最终的成功，也没有致命的失败，最可贵的是继续前进的勇气。」 - 温斯顿·丘吉尔
+>
+> "Success is not final, failure is not fatal. It is the courage to continue that counts." - Winston Churchill
+
+这是一个修复版本。
+
+## 🐣 What's New
+
++ Nothing new
+
+## ✨ What's Enhanced
+
++ Nothing enhanced
+
+## 🐛 What's Fixed
+
+* Fix flock on Windows (e1121c0) (@dixyes)
+* Fix missing CURLM_RECURSIVE_API_CALL on curl < 7.59.0 (a92d70c) (@dixyes)
+* Fix wrong parameter position of recvMessage() call (#240) (@assert6)
+* Fix FCC implementation compatibility (46e7d3d) (@twose)
+* Fix slow cURL when composer install (libcat/libcat@55959bf) (@twose)
++ Fix incorrect nNumUsed of functions table (07cea2b) (@twose)
+
+## 👻 What's Removed
+
+- Nothing removed
+
+---
+
 # v1.5.0
 
 > release-date: 2024-05-05
 
-> 优秀的项目获取 star，伟大的项目赢得人心。
+> 「优秀的项目获取 star，伟大的项目赢得人心。」 - Swow
 >
-> Excellent projects earn stars, great projects win hearts and minds.
+> "Excellent projects earn stars, great projects win hearts and minds." - Swow
+
+版本亮点：
+1、全新的 cURL 协程化支持，底层重构实现，覆盖各种边缘 cases；
+2、完整包含 PHP cURL 实现，不再依赖 cURL 扩展，因此可适配所有运行环境；
+3、Debugger 支持远程 telnet 调试、Psr7 Server 支持 HTTP chunked response。
 
 ## 🐣 What's New
 

@@ -32,6 +32,7 @@ $authorMap = [
     'DuxWeb' => 'duxphp',
     'AuroraHe' => 'AuroraYolo',
     '李铭昕' => 'limingxinleo',
+    '张城铭' => 'assert6',
 ];
 $kinds = [
     'new',
