@@ -1,3 +1,31 @@
+# v1.5.2
+
+> release-date: 2024-05-13
+
+> 真正的快乐不是没有痛苦，而是能在痛苦中找到乐趣。 - ChatGPT
+>
+> True joy is not about being without pain, but about finding pleasure in pain. - ChatGPT
+
+这是一个修复版本。
+
+## 🐣 What's New
+
++ Nothing new
+
+## ✨ What's Enhanced
+
++ Nothing enhanced
+
+## 🐛 What's Fixed
+
+* Callable curl options should be nullable (682b4be) (@twose)
+
+## 👻 What's Removed
+
+- Nothing removed
+
+----
+
 # v1.5.1
 
 > release-date: 2024-05-13
