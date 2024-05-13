@@ -39,8 +39,10 @@ $kinds = [
     'enhanced',
     'fixed',
     'removed',
-    'deps',
     'meaningless',
+    'version_control',
+    'cs_fixes',
+    'deps',
 ];
 $kindDescription = <<<'MAARKDOWN'
 - new: 新增的特性、功能、类、方法或 API
@@ -213,7 +215,7 @@ code diff:
 ```
 {$diff}
 ```
-以上是 Git 提交的信息，提交分为以下四种类型：
+以上是 Git 提交的信息，提交分为以下若干种类型：
 kinds:
 ```
 {$kindDescription}
